@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ifcodes.ifutilities.ifhosting", "src\ifcodes.ifutilities.ifhosting\ifcodes.ifutilities.ifhosting.csproj", "{F4DDF3F1-8887-4CE4-836D-FCD624930361}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B725B4FB-6A70-43DF-A652-555B7A8D6045}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+		ifutilities.ifhosting.nuspec = ifutilities.ifhosting.nuspec
+		README.md = README.md
+		.github\workflows\release.yml = .github\workflows\release.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug|Any CPU = debug|Any CPU
+		distributable|Any CPU = distributable|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4DDF3F1-8887-4CE4-836D-FCD624930361}.debug|Any CPU.ActiveCfg = debug|Any CPU
+		{F4DDF3F1-8887-4CE4-836D-FCD624930361}.debug|Any CPU.Build.0 = debug|Any CPU
+		{F4DDF3F1-8887-4CE4-836D-FCD624930361}.distributable|Any CPU.ActiveCfg = distributable|Any CPU
+		{F4DDF3F1-8887-4CE4-836D-FCD624930361}.distributable|Any CPU.Build.0 = distributable|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {192C6F47-015F-4334-A24A-A787311416BE}
+	EndGlobalSection
+EndGlobal

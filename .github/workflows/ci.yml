@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    branches: [ "staging" ]
+  
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0
+
+      - name: install nuget dependencies
+        run: dotnet restore .\ifhosting.sln
+
+      - name: compile
+        run: dotnet build .\ifhosting.sln --configuration distributable

@@ -1,0 +1,30 @@
+name: release
+
+on:
+  push:
+    branches: [ "master" ]
+  
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0
+
+      - name: install nuget dependencies
+        run: dotnet restore .\ifhosting.sln
+
+      - name: compile
+        run: dotnet build .\ifhosting.sln --configuration distributable
+      
+      - name: pack artifacts
+        run: nuget pack .\ifutilities.ifhosting.nuspec -Properties "configuration=distributable"
+
+      - name: prep packages
+        run: dotnet nuget add source --username ifcodesdotnet --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ifcodesdotnet/index.json"
+
+      - name: publish package
+        run: dotnet nuget push .\*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
